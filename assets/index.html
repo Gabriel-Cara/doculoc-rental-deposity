@@ -148,6 +148,39 @@
             opacity: 1;
         }
 
+        /* 4.5. Dark Flashlight Card */
+        .flashlight-card-dark {
+            position: relative;
+            background: #141414;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: border-color 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .flashlight-card-dark::before {
+            content: "";
+            position: absolute;
+            inset: 0px;
+            background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+                    rgba(24, 138, 200, 0.15),
+                    transparent 40%);
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .flashlight-card-dark:hover {
+            border-color: rgba(24, 138, 200, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(24, 138, 200, 0.1);
+        }
+
+        .flashlight-card-dark:hover::before {
+            opacity: 1;
+        }
+
         /* 5. Kinetic Animations */
         @keyframes float { 
             0%, 100% { transform: translateY(0); } 
@@ -376,6 +409,66 @@
         </div>
     </section>
 
+    <!-- SECTION 2: PROPOSTA DE VALOR (CLEAN & PREMIUM) -->
+    <section class="relative py-32 bg-[#0a0a0a] overflow-hidden text-white">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+            
+            <!-- Section Header (Left Aligned) -->
+            <div class="max-w-4xl mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8 text-white leading-[1.15]">
+                    Uma garantia criada para simplificar a locação.
+                </h2>
+                <p class="text-lg md:text-xl text-stone-400 font-light leading-relaxed max-w-3xl">
+                    A Garantia Locatícia Doculoc facilita a formalização de contratos residenciais e comerciais. Com processo digital, análise cadastral e contratação estruturada, a Doculoc ajuda sua imobiliária a converter mais locações com segurança e controle.
+                </p>
+            </div>
+
+            <!-- Clean 3-Column Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Card 1: Locador -->
+                <div class="flashlight-card-dark p-8 reveal delay-100 group cursor-default">
+                    <div class="w-12 h-12 bg-brand-500/10 border border-brand-500/20 rounded-xl flex items-center justify-center mb-10 group-hover:border-brand-500/40 transition-colors relative z-10">
+                        <iconify-icon icon="solar:home-smile-bold-duotone" class="text-2xl text-brand-400 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-semibold text-white mb-3">Para o Locador</h3>
+                        <p class="text-stone-400 text-sm leading-relaxed">
+                            Mais previsibilidade e segurança no recebimento. Garantia sólida para que o proprietário tenha tranquilidade total do início ao fim do contrato.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Imobiliária -->
+                <div class="flashlight-card-dark p-8 reveal delay-200 group cursor-default">
+                    <div class="w-12 h-12 bg-brand-500/10 border border-brand-500/20 rounded-xl flex items-center justify-center mb-10 group-hover:border-brand-500/40 transition-colors relative z-10">
+                        <iconify-icon icon="solar:buildings-bold-duotone" class="text-2xl text-brand-400 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-semibold text-white mb-3">Para a Imobiliária</h3>
+                        <p class="text-stone-400 text-sm leading-relaxed">
+                            Extrema agilidade e conversão acelerada. Transforme leads em contratos assinados rapidamente e sem burocracia desnecessária.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Locatário -->
+                <div class="flashlight-card-dark p-8 reveal delay-300 group cursor-default">
+                    <div class="w-12 h-12 bg-brand-500/10 border border-brand-500/20 rounded-xl flex items-center justify-center mb-10 group-hover:border-brand-500/40 transition-colors relative z-10">
+                        <iconify-icon icon="solar:key-bold-duotone" class="text-2xl text-brand-400 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-semibold text-white mb-3">Para o Locatário</h3>
+                        <p class="text-stone-400 text-sm leading-relaxed">
+                            Menos obstáculos para alugar o imóvel ideal. Aprovação ágil e facilitada para que o inquilino tenha a chave em mãos o quanto antes.
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
     <!-- Scripts for animations and flashlight effect -->
     <script>
         // 1. Reveal Elements on Scroll & Load
@@ -398,7 +491,7 @@
         });
 
         // 2. Flashlight Card Mouse Tracker
-        document.querySelectorAll('.flashlight-card').forEach(card => {
+        document.querySelectorAll('.flashlight-card, .flashlight-card-dark').forEach(card => {
             card.addEventListener('mousemove', e => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
