@@ -470,25 +470,22 @@
     </section>
 
     <!-- SECTION 3: PARA QUEM É (TIMELINE LAYOUT) -->
-    <section class="relative py-32 bg-[#050505] overflow-hidden text-white border-t border-white/5">
+    <section class="relative py-32 bg-white overflow-hidden text-stone-900 border-t border-stone-200">
         
-        <!-- Background Elements -->
-        <div class="absolute inset-0 z-0 grid-bg opacity-[0.03] pointer-events-none"></div>
-        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 50% 50%, rgba(24, 138, 200, 0.4) 0%, transparent 60%);"></div>
-        
-        <!-- Abstract smoky/wave blobs -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand-600/10 blur-[100px] rounded-full pointer-events-none"></div>
-        <div class="absolute top-[30%] left-[30%] w-[400px] h-[300px] bg-brand-400/10 blur-[80px] rounded-full pointer-events-none mix-blend-screen"></div>
-
-        <!-- Floating Particles -->
-        <div class="absolute top-[20%] left-[10%] w-4 h-4 bg-white/5 backdrop-blur-sm rounded-sm kinetic-float border border-white/10"></div>
-        <div class="absolute top-[60%] left-[25%] w-8 h-8 bg-white/5 backdrop-blur-sm rounded-sm kinetic-float border border-white/10" style="animation-delay: -1s;"></div>
-        <div class="absolute bottom-[20%] right-[15%] w-6 h-6 bg-white/5 backdrop-blur-sm rounded-sm kinetic-float border border-white/10" style="animation-delay: -2s;"></div>
-        <div class="absolute top-[30%] right-[30%] w-10 h-10 bg-white/5 backdrop-blur-sm rounded-sm kinetic-float border border-white/10" style="animation-delay: -1.5s;"></div>
-        <div class="absolute bottom-[40%] left-[40%] w-3 h-3 bg-white/5 backdrop-blur-sm rounded-sm kinetic-float border border-white/10" style="animation-delay: -0.5s;"></div>
-        
-        <!-- Huge Background Watermark -->
-        <div class="absolute top-10 right-10 text-[20rem] font-bold text-white/[0.02] leading-none pointer-events-none select-none z-0">
+        <!-- Background Elements (light mode) -->
+        <div class="absolute inset-0 z-0 grid-bg opacity-10 pointer-events-none"></div>
+        <div class="absolute inset-0 z-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 50% 50%, rgba(24, 138, 200, 0.10) 0%, transparent 60%);"></div>
+        <!-- Abstract blobs (light) -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand-100 blur-[100px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-[30%] left-[30%] w-[400px] h-[300px] bg-brand-200 blur-[80px] rounded-full pointer-events-none mix-blend-screen"></div>
+        <!-- Floating Particles (light) -->
+        <div class="absolute top-[20%] left-[10%] w-4 h-4 bg-brand-100/40 backdrop-blur-sm rounded-sm kinetic-float border border-brand-200"></div>
+        <div class="absolute top-[60%] left-[25%] w-8 h-8 bg-brand-100/40 backdrop-blur-sm rounded-sm kinetic-float border border-brand-200" style="animation-delay: -1s;"></div>
+        <div class="absolute bottom-[20%] right-[15%] w-6 h-6 bg-brand-100/40 backdrop-blur-sm rounded-sm kinetic-float border border-brand-200" style="animation-delay: -2s;"></div>
+        <div class="absolute top-[30%] right-[30%] w-10 h-10 bg-brand-100/40 backdrop-blur-sm rounded-sm kinetic-float border border-brand-200" style="animation-delay: -1.5s;"></div>
+        <div class="absolute bottom-[40%] left-[40%] w-3 h-3 bg-brand-100/40 backdrop-blur-sm rounded-sm kinetic-float border border-brand-200" style="animation-delay: -0.5s;"></div>
+        <!-- Huge Background Watermark (light) -->
+        <div class="absolute top-10 right-10 text-[20rem] font-bold text-brand-100 leading-none pointer-events-none select-none z-0">
             03
         </div>
 
@@ -496,80 +493,71 @@
             
             <!-- Section Header -->
             <div class="text-center max-w-4xl mx-auto mb-32 reveal">
-                <span class="inline-block text-xs font-mono uppercase tracking-widest text-stone-500 mb-6">Para quem é</span>
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+                <span class="inline-block text-xs font-mono uppercase tracking-widest text-brand-500 mb-6">Para quem é</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-stone-900">
                     Ideal para imobiliárias, locadores e locatários.
                 </h2>
             </div>
 
             <!-- Horizontal Timeline / Process -->
             <div class="relative max-w-5xl mx-auto reveal delay-200">
-                
-                <!-- Connecting Line -->
-                <div class="hidden md:block absolute top-[40px] left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-brand-500/0 via-brand-500/50 to-brand-500/0 z-0"></div>
-
+                <!-- Connecting Line (light) -->
+                <div class="hidden md:block absolute top-[40px] left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-brand-200/0 via-brand-300/70 to-brand-200/0 z-0"></div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 relative z-10">
-                    
                     <!-- Node 1: Imobiliárias -->
                     <div class="flex flex-col items-center text-center group cursor-default">
                         <!-- Icon Circle -->
                         <div class="relative mb-8">
-                            <div class="w-20 h-20 rounded-full border-2 border-[#1a1a1a] flex items-center justify-center bg-[#050505] group-hover:border-brand-500/50 transition-colors duration-500 z-10 relative shadow-[0_0_20px_rgba(0,0,0,0.5)]">
-                                <div class="w-14 h-14 rounded-full bg-[#111] flex items-center justify-center group-hover:bg-brand-500/20 transition-colors duration-500">
-                                    <iconify-icon icon="solar:buildings-bold-duotone" class="text-2xl text-stone-500 group-hover:text-brand-400 transition-colors duration-500"></iconify-icon>
+                            <div class="w-20 h-20 rounded-full border-2 border-brand-200 flex items-center justify-center bg-white group-hover:border-brand-400 transition-colors duration-500 z-10 relative shadow-[0_0_20px_rgba(24,138,200,0.08)]">
+                                <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center group-hover:bg-brand-100 transition-colors duration-500">
+                                    <iconify-icon icon="solar:buildings-bold-duotone" class="text-2xl text-brand-400 group-hover:text-brand-500 transition-colors duration-500"></iconify-icon>
                                 </div>
                             </div>
                             <!-- Pulse ring on hover -->
                             <div class="absolute inset-0 rounded-full border border-brand-400/0 group-hover:kinetic-pulse pointer-events-none"></div>
                         </div>
-                        
-                        <span class="text-[10px] font-mono text-stone-500 uppercase tracking-widest mb-3 group-hover:text-brand-400 transition-colors">STEP 01</span>
-                        <h3 class="text-2xl font-bold text-white mb-4">Imobiliárias</h3>
-                        <p class="text-stone-400 text-sm leading-relaxed max-w-[280px]">
+                        <span class="text-[10px] font-mono text-brand-400 uppercase tracking-widest mb-3 group-hover:text-brand-500 transition-colors">STEP 01</span>
+                        <h3 class="text-2xl font-bold text-stone-900 mb-4">Imobiliárias</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed max-w-[280px]">
                             Aumente a conversão de locações, reduza burocracias e conte com uma solução que ainda remunera sua operação com comissão sobre a primeira taxa.
                         </p>
                     </div>
-
                     <!-- Node 2: Locadores -->
                     <div class="flex flex-col items-center text-center group cursor-default mt-0 md:mt-0">
                         <!-- Icon Circle -->
                         <div class="relative mb-8">
-                            <div class="w-20 h-20 rounded-full border-2 border-[#1a1a1a] flex items-center justify-center bg-[#050505] group-hover:border-brand-500/50 transition-colors duration-500 z-10 relative shadow-[0_0_20px_rgba(0,0,0,0.5)]">
-                                <div class="w-14 h-14 rounded-full bg-[#111] flex items-center justify-center group-hover:bg-brand-500/20 transition-colors duration-500">
-                                    <iconify-icon icon="solar:home-smile-bold-duotone" class="text-2xl text-stone-500 group-hover:text-brand-400 transition-colors duration-500"></iconify-icon>
+                            <div class="w-20 h-20 rounded-full border-2 border-brand-200 flex items-center justify-center bg-white group-hover:border-brand-400 transition-colors duration-500 z-10 relative shadow-[0_0_20px_rgba(24,138,200,0.08)]">
+                                <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center group-hover:bg-brand-100 transition-colors duration-500">
+                                    <iconify-icon icon="solar:home-smile-bold-duotone" class="text-2xl text-brand-400 group-hover:text-brand-500 transition-colors duration-500"></iconify-icon>
                                 </div>
                             </div>
                             <!-- Pulse ring on hover -->
                             <div class="absolute inset-0 rounded-full border border-brand-400/0 group-hover:kinetic-pulse pointer-events-none"></div>
                         </div>
-                        
-                        <span class="text-[10px] font-mono text-stone-500 uppercase tracking-widest mb-3 group-hover:text-brand-400 transition-colors">STEP 02</span>
-                        <h3 class="text-2xl font-bold text-white mb-4">Locadores</h3>
-                        <p class="text-stone-400 text-sm leading-relaxed max-w-[280px]">
+                        <span class="text-[10px] font-mono text-brand-400 uppercase tracking-widest mb-3 group-hover:text-brand-500 transition-colors">STEP 02</span>
+                        <h3 class="text-2xl font-bold text-stone-900 mb-4">Locadores</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed max-w-[280px]">
                             Tenha mais segurança em caso de inadimplência, com possibilidade de apoio jurídico e pagamento do aluguel corrente em atraso conforme validação da garantia.
                         </p>
                     </div>
-
                     <!-- Node 3: Locatários -->
                     <div class="flex flex-col items-center text-center group cursor-default">
                         <!-- Icon Circle -->
                         <div class="relative mb-8">
-                            <div class="w-20 h-20 rounded-full border-2 border-[#1a1a1a] flex items-center justify-center bg-[#050505] group-hover:border-brand-500/50 transition-colors duration-500 z-10 relative shadow-[0_0_20px_rgba(0,0,0,0.5)]">
-                                <div class="w-14 h-14 rounded-full bg-[#111] flex items-center justify-center group-hover:bg-brand-500/20 transition-colors duration-500">
-                                    <iconify-icon icon="solar:key-bold-duotone" class="text-2xl text-stone-500 group-hover:text-brand-400 transition-colors duration-500"></iconify-icon>
+                            <div class="w-20 h-20 rounded-full border-2 border-brand-200 flex items-center justify-center bg-white group-hover:border-brand-400 transition-colors duration-500 z-10 relative shadow-[0_0_20px_rgba(24,138,200,0.08)]">
+                                <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center group-hover:bg-brand-100 transition-colors duration-500">
+                                    <iconify-icon icon="solar:key-bold-duotone" class="text-2xl text-brand-400 group-hover:text-brand-500 transition-colors duration-500"></iconify-icon>
                                 </div>
                             </div>
                             <!-- Pulse ring on hover -->
                             <div class="absolute inset-0 rounded-full border border-brand-400/0 group-hover:kinetic-pulse pointer-events-none"></div>
                         </div>
-                        
-                        <span class="text-[10px] font-mono text-stone-500 uppercase tracking-widest mb-3 group-hover:text-brand-400 transition-colors">STEP 03</span>
-                        <h3 class="text-2xl font-bold text-white mb-4">Locatários</h3>
-                        <p class="text-stone-400 text-sm leading-relaxed max-w-[280px]">
+                        <span class="text-[10px] font-mono text-brand-400 uppercase tracking-widest mb-3 group-hover:text-brand-500 transition-colors">STEP 03</span>
+                        <h3 class="text-2xl font-bold text-stone-900 mb-4">Locatários</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed max-w-[280px]">
                             Alugue com mais facilidade, sem depender de fiador tradicional, caução elevada ou alternativas mais burocráticas.
                         </p>
                     </div>
-
                 </div>
             </div>
 
