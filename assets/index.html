@@ -73,6 +73,7 @@
         .delay-300 { transition-delay: 0.3s; }
         .delay-400 { transition-delay: 0.4s; }
         .delay-500 { transition-delay: 0.5s; }
+        .delay-600 { transition-delay: 0.6s; }
         .delay-700 { transition-delay: 0.7s; }
 
         /* 2. Beam Button Animation */
@@ -179,6 +180,42 @@
             border-color: #35a8d9;
             box-shadow: 0 0 0 8px rgba(53, 168, 217, 0.12), 0 0 32px rgba(24, 138, 200, 0.35);
             transform: scale(1.08);
+        }
+
+        .trust-scan {
+            background: linear-gradient(90deg, transparent, rgba(24, 138, 200, 0.18), transparent);
+            animation: trust-scan 5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+        }
+
+        .trust-orbit {
+            animation: trust-orbit 18s linear infinite;
+            transform-origin: center;
+        }
+
+        .trust-orbit-reverse {
+            animation: trust-orbit 24s linear infinite reverse;
+            transform-origin: center;
+        }
+
+        .trust-meter {
+            transform-origin: left center;
+            animation: trust-meter 3.5s cubic-bezier(0.16, 1, 0.3, 1) infinite alternate;
+        }
+
+        @keyframes trust-scan {
+            0% { transform: translateX(-120%); opacity: 0; }
+            20% { opacity: 1; }
+            70% { opacity: 1; }
+            100% { transform: translateX(120%); opacity: 0; }
+        }
+
+        @keyframes trust-orbit {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes trust-meter {
+            0% { transform: scaleX(0.58); }
+            100% { transform: scaleX(0.96); }
         }
 
         /* 4.5. Dark Flashlight Card */
@@ -760,6 +797,161 @@
                         Fazer pré-análise
                         <iconify-icon class="text-xl group-hover:translate-x-1 transition-transform" icon="solar:arrow-right-line-duotone"></iconify-icon>
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: DOBRA DE CONFIANCA -->
+        <section class="relative py-32 bg-white overflow-hidden border-t border-stone-200">
+            <div class="absolute inset-0 grid-bg opacity-30 pointer-events-none"></div>
+            <div class="absolute top-0 left-1/2 h-px w-[80%] -translate-x-1/2 bg-gradient-to-r from-transparent via-brand-300/70 to-transparent"></div>
+            <div class="absolute -top-32 right-[-10%] w-[680px] h-[680px] rounded-full bg-brand-100/70 blur-[110px] pointer-events-none"></div>
+            <div class="absolute bottom-[-18%] left-[-8%] w-[560px] h-[560px] rounded-full bg-emerald-50 blur-[100px] pointer-events-none"></div>
+
+            <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-16">
+                    <div class="lg:col-span-6 reveal">
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-200 bg-white/80 shadow-sm text-xs font-mono uppercase tracking-widest text-brand-600 mb-8">
+                            <span class="w-2 h-2 rounded-full bg-brand-400 shadow-[0_0_16px_rgba(24,138,200,0.55)]"></span>
+                            Dobra de confiança
+                        </span>
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-stone-950 leading-[1.08] mb-8">
+                            Segurança real quando a inadimplência acontece
+                        </h2>
+                        <p class="text-xl md:text-2xl text-stone-700 font-light leading-relaxed mb-6">
+                            Sua imobiliária não fica sozinha nos momentos mais críticos da locação.
+                        </p>
+                        <p class="text-base md:text-lg text-stone-500 leading-relaxed max-w-2xl">
+                            A Garantia Locatícia Doculoc oferece suporte estruturado para ajudar na condução de casos de inadimplência, reduzindo desgaste operacional e trazendo mais previsibilidade para locadores e imobiliárias.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-6 reveal delay-200">
+                        <div class="relative min-h-[520px]">
+                            <div class="absolute inset-8 rounded-full border border-stone-200/80"></div>
+                            <div class="absolute inset-20 rounded-full border border-brand-200/70 trust-orbit"></div>
+                            <div class="absolute inset-4 rounded-full border border-dashed border-stone-300/80 trust-orbit-reverse"></div>
+
+                            <div class="absolute left-1/2 top-1/2 w-52 h-52 -translate-x-1/2 -translate-y-1/2 rounded-full bg-stone-950 text-white shadow-[0_34px_90px_-34px_rgba(12,20,28,0.8)] flex flex-col items-center justify-center text-center overflow-hidden">
+                                <div class="absolute inset-y-0 w-20 trust-scan"></div>
+                                <div class="relative z-10 w-16 h-16 rounded-2xl bg-brand-500/20 border border-brand-300/30 flex items-center justify-center mb-5">
+                                    <iconify-icon icon="solar:shield-check-bold-duotone" class="text-4xl text-brand-300"></iconify-icon>
+                                </div>
+                                <span class="relative z-10 text-[10px] font-mono uppercase tracking-[0.28em] text-brand-200 mb-2">Doculoc</span>
+                                <strong class="relative z-10 text-2xl font-bold tracking-tight">Garantia ativa</strong>
+                            </div>
+
+                            <div class="absolute top-4 left-0 sm:left-8 w-64 bg-white/90 backdrop-blur-xl border border-stone-200 rounded-xl p-5 shadow-[0_22px_60px_-34px_rgba(28,25,23,0.45)] kinetic-float">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-[10px] font-mono uppercase tracking-widest text-stone-400">Ocorrência</span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_16px_rgba(245,158,11,0.45)]"></span>
+                                </div>
+                                <div class="text-lg font-bold text-stone-950 mb-2">Aluguel em atraso</div>
+                                <p class="text-sm text-stone-500 leading-relaxed">Fluxo estruturado para análise, validação e condução do caso.</p>
+                            </div>
+
+                            <div class="absolute top-28 right-0 w-72 bg-white/90 backdrop-blur-xl border border-brand-200 rounded-xl p-5 shadow-[0_24px_70px_-36px_rgba(24,138,200,0.55)] kinetic-float" style="animation-delay: -1.4s;">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-11 h-11 rounded-lg bg-brand-50 flex items-center justify-center">
+                                        <iconify-icon icon="solar:case-round-minimalistic-bold-duotone" class="text-2xl text-brand-500"></iconify-icon>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[10px] font-mono uppercase tracking-widest text-brand-500">Apoio</span>
+                                        <strong class="text-stone-950">Jurídico especializado</strong>
+                                    </div>
+                                </div>
+                                <div class="h-2 rounded-full bg-stone-100 overflow-hidden">
+                                    <div class="trust-meter h-full w-full rounded-full bg-gradient-to-r from-brand-400 to-emerald-400"></div>
+                                </div>
+                            </div>
+
+                            <div class="absolute bottom-20 left-0 w-72 bg-white/90 backdrop-blur-xl border border-stone-200 rounded-xl p-5 shadow-[0_24px_70px_-36px_rgba(28,25,23,0.4)] kinetic-float" style="animation-delay: -2.2s;">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-11 h-11 rounded-lg bg-emerald-50 flex items-center justify-center">
+                                        <iconify-icon icon="solar:document-add-bold-duotone" class="text-2xl text-emerald-500"></iconify-icon>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[10px] font-mono uppercase tracking-widest text-emerald-600">Processo</span>
+                                        <strong class="text-stone-950">Despejo e cobrança</strong>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-stone-500 leading-relaxed">Condução orientada e acompanhamento operacional durante o processo.</p>
+                            </div>
+
+                            <div class="absolute bottom-0 right-4 w-64 bg-stone-950 text-white rounded-xl p-5 shadow-[0_30px_80px_-36px_rgba(12,20,28,0.85)] kinetic-float" style="animation-delay: -0.7s;">
+                                <span class="block text-[10px] font-mono uppercase tracking-widest text-stone-400 mb-3">Previsibilidade</span>
+                                <div class="flex items-end gap-2 h-20">
+                                    <div class="w-1/4 h-8 rounded-t bg-stone-700"></div>
+                                    <div class="w-1/4 h-12 rounded-t bg-stone-600"></div>
+                                    <div class="w-1/4 h-16 rounded-t bg-brand-500"></div>
+                                    <div class="w-1/4 h-20 rounded-t bg-brand-300"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    <div class="lg:col-span-5 reveal delay-100">
+                        <div class="h-full rounded-xl bg-stone-950 text-white p-8 md:p-10 shadow-[0_28px_90px_-42px_rgba(12,20,28,0.9)] relative overflow-hidden">
+                            <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 20% 10%, rgba(53,168,217,0.35), transparent 35%), radial-gradient(circle at 90% 80%, rgba(16,185,129,0.18), transparent 30%);"></div>
+                            <div class="relative z-10">
+                                <span class="text-xs font-mono uppercase tracking-widest text-brand-300 block mb-8">A Doculoc pode atuar com</span>
+                                <div class="space-y-5">
+                                    <div class="flex items-start gap-4">
+                                        <span class="mt-1 w-6 h-6 rounded-full bg-brand-500 flex items-center justify-center shrink-0"><iconify-icon icon="solar:check-read-linear" class="text-base"></iconify-icon></span>
+                                        <p class="text-lg text-stone-100">Pagamento do aluguel corrente em atraso*</p>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <span class="mt-1 w-6 h-6 rounded-full bg-brand-500 flex items-center justify-center shrink-0"><iconify-icon icon="solar:check-read-linear" class="text-base"></iconify-icon></span>
+                                        <p class="text-lg text-stone-100">Apoio jurídico especializado</p>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <span class="mt-1 w-6 h-6 rounded-full bg-brand-500 flex items-center justify-center shrink-0"><iconify-icon icon="solar:check-read-linear" class="text-base"></iconify-icon></span>
+                                        <p class="text-lg text-stone-100">Condução de ação de despejo e cobrança</p>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <span class="mt-1 w-6 h-6 rounded-full bg-brand-500 flex items-center justify-center shrink-0"><iconify-icon icon="solar:check-read-linear" class="text-base"></iconify-icon></span>
+                                        <p class="text-lg text-stone-100">Assessoria operacional durante o processo</p>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <span class="mt-1 w-6 h-6 rounded-full bg-brand-500 flex items-center justify-center shrink-0"><iconify-icon icon="solar:check-read-linear" class="text-base"></iconify-icon></span>
+                                        <p class="text-lg text-stone-100">Mais segurança para imobiliária e locador</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="flashlight-card rounded-xl p-7 bg-white/80 border border-stone-200 shadow-[0_20px_70px_-42px_rgba(28,25,23,0.35)] reveal delay-200">
+                            <div class="w-12 h-12 rounded-lg bg-brand-50 flex items-center justify-center mb-8">
+                                <iconify-icon icon="solar:verified-check-bold-duotone" class="text-3xl text-brand-500"></iconify-icon>
+                            </div>
+                            <h3 class="text-xl font-bold tracking-tight text-stone-950 mb-3">Processo validado</h3>
+                            <p class="text-stone-500 leading-relaxed">Tudo isso com um processo estruturado, digital e validado conforme os Termos e Condições da garantia.</p>
+                        </div>
+
+                        <div class="flashlight-card rounded-xl p-7 bg-white/80 border border-stone-200 shadow-[0_20px_70px_-42px_rgba(28,25,23,0.35)] reveal delay-300">
+                            <div class="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center mb-8">
+                                <iconify-icon icon="solar:clipboard-check-bold-duotone" class="text-3xl text-emerald-500"></iconify-icon>
+                            </div>
+                            <h3 class="text-xl font-bold tracking-tight text-stone-950 mb-3">Menos desgaste operacional</h3>
+                            <p class="text-stone-500 leading-relaxed">A imobiliária ganha apoio para conduzir casos críticos com mais organização, registro e previsibilidade.</p>
+                        </div>
+
+                        <div class="md:col-span-2 rounded-xl border border-brand-200 bg-brand-50/60 p-7 md:p-8 reveal delay-400">
+                            <div class="flex flex-col md:flex-row md:items-center gap-6">
+                                <div class="w-14 h-14 rounded-xl bg-white border border-brand-100 flex items-center justify-center shrink-0">
+                                    <iconify-icon icon="solar:info-circle-bold-duotone" class="text-3xl text-brand-500"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold tracking-tight text-stone-950 mb-2">Previsibilidade quando o risco vira realidade</h3>
+                                    <p class="text-stone-600 leading-relaxed">*Conforme análise, validação e condições contratuais.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
